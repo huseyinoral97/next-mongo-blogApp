@@ -9,7 +9,7 @@ const Navbar = () => {
   return (
     <div className="container mx-auto">
       <div className="h-24 flex justify-between items-center">
-        <div className="flex flex-1 items-center gap-3">
+        <div className="flex flex-1 items-center gap-3 max-md:hidden">
           <div className="rounded-full bg-[#4267B2] p-1">
             <BiLogoFacebook className="text-white" />
           </div>
@@ -23,22 +23,22 @@ const Navbar = () => {
             <BsYoutube className="text-white" />
           </div>
         </div>
-        <div className="flex-1 flex justify-center text-4xl font-bold">
+        <div className="flex-1 flex justify-center text-4xl max-md:text-2xl font-bold">
           Logo
         </div>
-        <div className="flex-1">
+        <div className="flex-1 flex md:justify-end">
           <ul className="flex items-center gap-5">
             <li>
               <ThemeToggle />
             </li>
             <li>
-              <Link href="/">Homepage</Link>
+              <Link href="/" className="max-md:hidden">Homepage</Link>
             </li>
             <li>
-              <Link href="/contact">Contact</Link>
+              <Link href="/contact" className="max-md:hidden">Contact</Link>
             </li>
             <li>
-              <Link href="/about">About</Link>
+              <Link href="/about" className="max-md:hidden">About</Link>
             </li>
             <li>
               <AuthLinks />

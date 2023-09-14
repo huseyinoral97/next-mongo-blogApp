@@ -36,3 +36,7 @@ div {
   background-color: var(--bg);
   color: var(--textColor);
 }
+
+img {
+  position: relative !important;
+}
