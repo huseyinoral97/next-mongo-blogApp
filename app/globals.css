@@ -40,3 +40,7 @@ div {
 img {
   position: relative !important;
 }
+
+.ql-editor p {
+  color: wheat !important;
+}

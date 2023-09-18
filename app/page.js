@@ -4,10 +4,10 @@ import Featured from "@/components/Featured";
 
 export default function Home() {
   return (
-    <div>
+    <div className="md:py-20 max-md:pb-20">
       <Featured />
-      <CategoryList />
-      <div>
+      <CategoryList withImage={true} />
+      <div className="container mx-auto">
         <CardList />
       </div>
     </div>
