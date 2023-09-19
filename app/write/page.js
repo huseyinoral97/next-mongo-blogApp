@@ -10,7 +10,7 @@ const WritePage = () => {
     return (
         <div className='container mx-auto max-md:p-4 h-screen'>
             <div className="py-20">
-                <input type="text" placeholder='Title' className='bg-transparent placeholder:text-4xl focus:outline-none h-10' />
+                <input type="text" placeholder='Title' className='bg-transparent placeholder:text-4xl focus:outline-none h-10 text-4xl' />
                 <div className='flex gap-10 mt-10'>
                     <button onClick={() => setOpen(!open)}>
                         <Image src="/plus.png" alt='' fill />
@@ -32,9 +32,9 @@ const WritePage = () => {
                     }
 
                 </div>
-                <ReactQuill className='mt-10 textArea' value={value} onChange={setValue} placeholder='Tell your story...' />
-
+                <ReactQuill style={{ height: '300px' }} className='mt-10 textArea placeholder:text-white' value={value} onChange={setValue} placeholder='Tell your story...' />
             </div>
+            <button className="bg-green-900 rounded-full py-2 px-5 cursor-pointer">Publish</button>
         </div>
     )
 }

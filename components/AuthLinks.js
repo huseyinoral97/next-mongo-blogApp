@@ -1,4 +1,5 @@
 "use client";
+import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
 import React, { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
@@ -7,15 +8,16 @@ import { IoMdClose } from "react-icons/io";
 const AuthLinks = () => {
   const [open, setOpen] = useState(false);
 
-  const status = "notauthenticated";
+  const { status } = useSession();
+
   return (
     <div className="flex items-center gap-5">
-      {status === "notauthenticated" ? (
+      {status === "unauthenticated" ? (
         <Link href="/login" className="font-semibold max-md:hidden" >Login</Link>
       ) : (
         <>
           <Link href="/write" className="max-md:hidden">Write</Link>
-          <span className="ml-5 font-semibold max-md:hidden">Logout</span>
+          <span className="ml-5 font-semibold max-md:hidden" onClick={signOut}>Logout</span>
         </>
       )}
       <div>
@@ -29,7 +31,7 @@ const AuthLinks = () => {
           <Link href="/" className="font-semibold text-2xl" onClick={() => setOpen(false)} >Homepage</Link>
           <Link href="/about" className="font-semibold text-2xl" onClick={() => setOpen(false)}>About</Link>
           <Link href="/contact" className="font-semibold text-2xl" onClick={() => setOpen(false)}>Contact</Link>
-          {status === "notauthenticated" ? (
+          {status === "unauthenticated" ? (
             <Link href="/login" className="font-semibold text-2xl" onClick={() => setOpen(false)} >Login</Link>
           ) : (
             <>
