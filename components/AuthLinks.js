@@ -13,11 +13,11 @@ const AuthLinks = () => {
   return (
     <div className="flex items-center gap-5">
       {status === "unauthenticated" ? (
-        <Link href="/login" className="font-semibold max-md:hidden" >Login</Link>
+        <Link href="/login" className="font-semibold max-md:hidden cursor-pointer" >Login</Link>
       ) : (
         <>
-          <Link href="/write" className="max-md:hidden">Write</Link>
-          <span className="ml-5 font-semibold max-md:hidden" onClick={signOut}>Logout</span>
+          <Link href="/write" className="max-md:hidde cursor-pointern">Write</Link>
+          <span className="ml-5 font-semibold max-md:hidden cursor-pointer" onClick={signOut}>Logout</span>
         </>
       )}
       <div>

@@ -1,11 +1,26 @@
 "use client"
 import { signIn, useSession } from 'next-auth/react'
+import { useRouter } from 'next/navigation';
 import React from 'react'
+import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 
 const LoginPage = () => {
 
     const { data, status } = useSession();
-    console.log(data, status)
+
+    const router = useRouter();
+
+    if (status === "loading") {
+        return (
+            <div className="h-screen flex justify-center items-center">
+                <AiOutlineLoading3Quarters />
+            </div>
+        )
+    }
+
+    if (status === "authenticated") {
+        router.push("/")
+    }
 
     return (
         <div className='h-screen flex items-center justify-center'>
